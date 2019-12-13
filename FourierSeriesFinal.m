@@ -5,19 +5,19 @@ clc;
 syms t 
 syms n
 
+%%% Function definition %%%
+fun_yt = @(t) -2*t.^2; %% Function the fourier-series should be found for.
+
 %%% Defining Variables %%%
 T = 2*pi; %%Period
 P = 50; %%Number of points recorded.
 i = 0;
 
-
-%%% Function definition %%%
-fun_yt = @(t) -2*t.^2; %% Function the fourier should be found for.
+%%% Integral of function y(t) for a0 %%%
 i_a0 = integral(fun_yt, -pi, pi); %%Finding the integral from -pi to pi.
 
-
 %%% Fourier simulation %%%
-for t = linspace(-T, T, P)
+for t = linspace(-T, T, P) 
     i = i + 1; time(i) = t;
     
     y(i) = -2*t^2;
@@ -28,13 +28,13 @@ for t = linspace(-T, T, P)
     b_n = 0;
     
     zig = (a_n*cos(n*t)+b_n*sin(n*t));
-    f(i) = a0 + symsum(zig, n, 1, 1); %%Fundamental frequency N = 1
+    f(i) = a0 + symsum(zig, n, 1, 1) ; %%Fundamental frequency N = 1
     g(i) = a0 + symsum(zig, n, 1, 5) ; %%N=5
     h(i) = a0 + symsum(zig, n, 1, 15); %%N=15
 end    
 
 
-%%% Fourier plot %%%
+%%% Fourier-sries plot %%%
 figure(1)
 clf %%Clearing the current figure window when the program is run.
 figure(1)
@@ -44,7 +44,7 @@ plot(time, f, 'b', 'Linewidth', 1)
 plot(time, g, 'g', 'Linewidth', 1)
 plot(time, h, 'm', 'Linewidth', 1)
 
-title('Fourier Series of function y(t) = -2*t^2')
+title('Fourier-Series of function y(t) = -2*t^2')
 legend('y(t): -2t^2', 'N=1 (Fundamental Freq.)', 'N=5', 'N=15')
 grid on;
 xlabel('Frequency')
