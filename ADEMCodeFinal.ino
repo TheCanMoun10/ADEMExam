@@ -33,7 +33,7 @@ bool OnOff = true; //Default
 
 int DirecPin = 2; //The RS485 protocol set to pin 2, and put to HIGH to receive data.
 unsigned char Packet_Status[16]; //Array holding the returned status packet.
-unsigned char Packet_Status1[11];
+unsigned char Packet_Status1[11]; //Status array used for temperature.
 
 //Defining the protocols needed:
 void doReboot(unsigned char ID)
