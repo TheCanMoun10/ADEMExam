@@ -47,7 +47,8 @@ plot(time, h, 'm', 'Linewidth', 1)
 title('Fourier-Series of function y(t) = -2*t^2')
 legend('y(t): -2t^2', 'N=1 (Fundamental Freq.)', 'N=5', 'N=15')
 grid on;
-xlabel('Frequency')
+xlabel('Frequency (time)')
+ylabel('Amplitude')
 xlim([-T T])
 ylim([-25 5])
 
